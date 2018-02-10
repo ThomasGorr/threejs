@@ -1,6 +1,6 @@
+import * as meshGenerator from "./meshGenerator";
 
 window.onload = () => {
-const meshGenerator = require("./meshGenerator");
     const width = window.innerWidth;
     const height = window.innerHeight;
 

@@ -19,7 +19,10 @@ export function randomMeshs(window, scene, xCount, yCount) {
 }
 
 
-export function distributedMeshs(xCount, yCount) {
+export function distributedMeshs(window, scene, xCount, yCount) {
+    let meshs = [];
+    const width = window.innerWidth;
+    const height = window.innerHeight;
     for (let x = 0; x < xCount; x++) {
         for (let y = 0; y < yCount; y++) {
             const geometry = new THREE.BoxGeometry(8, 8, 8);
@@ -30,6 +33,7 @@ export function distributedMeshs(xCount, yCount) {
             scene.add(mesh);
         }
     }
+    return meshs;
 }
 
 

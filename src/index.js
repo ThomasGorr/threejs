@@ -18,10 +18,12 @@ window.onload = () => {
 
     const pointLight = new THREE.PointLight(0xffffff, 0.5);
     scene.add(pointLight);
-    var controls = new THREE.OrbitControls( camera, renderer.domElement );
-    controls.addEventListener( 'change', function() { renderer.render(scene, camera); } );
+    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.addEventListener('change', function () {
+        renderer.render(scene, camera);
+    });
 
-    let meshs =  meshGenerator.randomMeshs(window, scene, 10,10);
+    let meshs = meshGenerator.randomMeshs(window, scene, 10, 10);
 
 
     // Render the scene/camera combnation
@@ -29,10 +31,12 @@ window.onload = () => {
 
 // Add an orbit control which allows us to move around the scene. See the three.js example for more details
 // https://github.com/mrdoob/three.js/blob/dev/examples/js/controls/OrbitControls.
-    var controls = new THREE.OrbitControls( camera, renderer.domElement );
-    controls.target = new THREE.Vector3(0,15,0);
+    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.target = new THREE.Vector3(0, 15, 0);
     controls.maxPolarAngle = Math.PI / 2;
-    controls.addEventListener( 'change', function() { renderer.render(scene, camera); } ); // add this only if there is no animation loop (requestAnimationFrame)
+    controls.addEventListener('change', function () {
+        renderer.render(scene, camera);
+    }); // add this only if there is no animation loop (requestAnimationFrame)
 
     requestAnimationFrame(render);
 
@@ -46,3 +50,4 @@ window.onload = () => {
         requestAnimationFrame(render);
     }
 };
+

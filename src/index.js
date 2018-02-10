@@ -8,9 +8,6 @@ const meshGenerator = require("./meshGenerator");
     renderer.setClearColor(0x000000);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
-    console.log("Window Width", width);
-    console.log("Window Height", height);
-
 
     const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
 

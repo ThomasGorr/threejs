@@ -1,3 +1,11 @@
+/**
+ * Adds meshs to the scene with randomly positions.
+ * @param window window-Object for properties like width and height
+ * @param scene THREE.Scene
+ * @param xCount Number of meshs on the X-Axis
+ * @param yCount Number of meshs on the Y-Axis
+ * @returns {Array} array of generated meshs
+ */
 export function randomMeshs(window, scene, xCount, yCount) {
     let meshs = [];
     const width = window.innerWidth;
@@ -18,7 +26,14 @@ export function randomMeshs(window, scene, xCount, yCount) {
     return meshs;
 }
 
-
+/**
+ * Adds meshs to the scene with distributed positions.
+ * @param window window-Object for properties like width and height
+ * @param scene THREE.Scene
+ * @param xCount Number of meshs on the X-Axis
+ * @param yCount Number of meshs on the Y-Axis
+ * @returns {Array} array of generated meshs
+ */
 export function distributedMeshs(window, scene, xCount, yCount) {
     let meshs = [];
     const width = window.innerWidth;
@@ -36,12 +51,23 @@ export function distributedMeshs(window, scene, xCount, yCount) {
     return meshs;
 }
 
-
+/**
+ * Calculates the distributed X or Y position for a mesh within the current inner-window.
+ * @param scale Scale of innerWidth or innerHeight of global Window-Object.
+ * @param count Number of object on current axis.
+ * @param current Current object on current axis.
+ * @returns {number}
+ */
 function setEqualDistributionXorYPostion(scale, count, current) {
     const start = -(scale / 2) * 0.5;
     return start + (scale / count) * current;
 }
 
+/**
+ * Calculates a random X or Y position for a mesh within the current inner-window.
+ * @param scale Scale of innerWidth or innerHeight of global Window-Object.
+ * @returns {number}
+ */
 function setRandomXorYPosition(scale) {
     const max = (scale / 2) * 0.5;
     const min = -max;
